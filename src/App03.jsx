@@ -35,7 +35,6 @@ const handleAddFighter = (fighter) => {
   }
 }
 
-
 <ul>
 {team.map((fighter) => (
   <li>
@@ -48,5 +47,3 @@ const handleAddFighter = (fighter) => {
   </li>
 ))}
 </ul>
-
-

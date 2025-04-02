@@ -101,11 +101,12 @@ const App = () => {
     } else {
       setTeam([...team, fighter]); //add a figter to the array
       setMoney(money - fighter.price); //subtract money
-      //removeFighter(fighter.id); //remove id of the fighter once you added
+      const newTeam = zombieFighters.filter(player => player.id !== fighter.id)
+      // filter's out the fighter you Add; newTeam is the players you havent added
+      // player.id !== fighter.id(you Added)
+      setZombieFighters(newTeam); //add the fighter you pick into a setZomFigher array
     }
-
   };
-
 
   const handleRemoveFighter = (removefighter) => {
     const newTeam = team.filter(fighter => fighter.id !== removefighter.id)
@@ -113,7 +114,6 @@ const App = () => {
     setZombieFighters([...zombieFighters, removefighter]);
     setMoney(money + removefighter.price);
   }
-
 
   return (
     <>
@@ -157,9 +157,6 @@ const App = () => {
         ))}
       </ul>
         
-
-
-
     </>
   );
 }
